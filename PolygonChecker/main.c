@@ -20,16 +20,17 @@ int main() {
 			printf_s("Triangle selected.\n");
 			int triangleSides[3] = { 0, 0, 0 };
 			int* triangleSidesPtr = getTriangleSides(triangleSides);
-			//printf_s("! %d\n", triangleSidesPtr[0]);
 			char* result = analyzeTriangle(triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2]);
 			printf_s("%s\n", result);
 			break;
 		case 2:
 			printf_s("Rectangle selected.\n");
-			int rectangleSides[4] = {0, 0, 0, 0};
-			int* rectangleSidesPtr = getRectangleSides(rectangleSides);
-			char* rectangleresult = analyzeRectangle(rectangleSidesPtr[0], rectangleSidesPtr[1], rectangleSidesPtr[2], rectangleSidesPtr[3]);
-			printf_s("%s\n", rectangleresult);
+			int rectanglePoints[8] = { 0, 0, 0, 0, 0, 0, 0, 0 };
+			int rectangleSides[4] = { 0, 0, 0, 0 };
+			int* rectanglePointsPtr = getRectanglePoints(rectanglePoints);
+			int* rectangleSidesPtr = analyzeRectanglepoints(rectangleSides , rectanglePointsPtr[0], rectanglePointsPtr[1], rectanglePointsPtr[2], rectanglePointsPtr[3], rectanglePointsPtr[4], rectanglePointsPtr[5], rectanglePointsPtr[6], rectanglePointsPtr[7]);
+			char* rectangleresultsides = analyzeRectangleside(rectangleSidesPtr[0], rectangleSidesPtr[1], rectangleSidesPtr[2], rectangleSidesPtr[3]);
+			printf_s("%s\n", rectangleresultsides);
 			parameter(rectangleSidesPtr[0], rectangleSidesPtr[1], rectangleSidesPtr[2], rectangleSidesPtr[3]);
 			break;
 		case 0:
@@ -73,11 +74,15 @@ int* getTriangleSides(int* triangleSides) {
 	return triangleSides;
 }
 
-int* getRectangleSides(int* rectangleSides) {
-	printf_s("Enter the four sides of the rectangle: ");
-	for (int i = 0; i < 4; i++)
+int* getRectanglePoints(int* rectanglePoints) {
+	printf_s("Enter the four points of the rectangle in x,y form\n");
+	for (int j = 1; j < 5; j++)
 	{
-		scanf_s("%d", &rectangleSides[i]);
+		printf_s("Point%d: ", j);
+		for (int i = 0; i < 2; i++)
+		{
+			scanf_s("%d", &rectanglePoints[i]);
+		}
 	}
-	return rectangleSides;
+	return  rectanglePoints;
 }

@@ -2,4 +2,4 @@
 void printWelcome();
 int printShapeMenu();
 int* getTriangleSides(int* triangleSides);
-int* getRectangleSides(int* rectangleSides);
+int* getRectanglePoints(int* rectanglePoints);
