@@ -12,3 +12,5 @@ char* analyzeRectangleside(int side1, int side2, int side3, int side4);
 void parameter(int side1, int side2, int side3, int side4);
 //triangle functions
 char* analyzeTriangle(int side1, int side2, int side3);
+
+int* triangleangles(int side1, int side2, int side3);

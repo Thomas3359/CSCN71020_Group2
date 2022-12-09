@@ -16,6 +16,7 @@ int main() {
 		{
 		case 1:
 			printf_s("Triangle selected.\n");
+			float gamma, alpha, beta;
 			int triangleSides[3] = { 0, 0, 0 };
 			int* triangleSidesPtr = getTriangleSides(triangleSides);
 			char* result = analyzeTriangle(triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2]);

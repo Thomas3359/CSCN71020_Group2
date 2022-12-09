@@ -3,6 +3,8 @@
 
 extern "C" int analyzeTriangle(int, int, int);
 extern "C" int main();
+extern "C" int triangleangles(int, int, int);
+
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -60,7 +62,7 @@ namespace REQ001
 			Assert::AreEqual(2, tempresult);
 		}
 
-		TEST_METHOD(TriangleFunction_009)
+		TEST_METHOD(TriangleFunction_007)
 		{
 			//this is testing triangle function using 
 			int tempresult = 0;
@@ -68,7 +70,7 @@ namespace REQ001
 			Assert::AreEqual(3, tempresult);
 		}
 
-		TEST_METHOD(TriangleFunction_004)
+		TEST_METHOD(TriangleFunction_008)
 		{
 			//this is testing triangle function using 
 			int tempresult = 0;
@@ -76,7 +78,7 @@ namespace REQ001
 			Assert::AreEqual(3, tempresult);
 		}
 
-		TEST_METHOD(TriangleFunction_002)
+		TEST_METHOD(TriangleFunction_009)
 		{
 			//this is testing triangle function using 
 			int tempresult = 0;
@@ -84,12 +86,20 @@ namespace REQ001
 			Assert::AreEqual(4, tempresult);
 		}
 
-		TEST_METHOD(TriangleFunction_008)
+		TEST_METHOD(TriangleFunction_010)
 		{
 			//this is testing triangle function using 
 			int tempresult = 0;
 			tempresult = analyzeTriangle(10000000000, 50, 10);
 			Assert::AreEqual(4, tempresult);
+		}
+
+		TEST_METHOD(TriangleAngleFunction_001)
+		{
+			//this is testing triangle angle function using 
+			int gamma = 0;
+			gamma = triangleangles(10, 20, 30);
+			Assert::AreEqual(90, gamma);
 		}
 	};
 }
