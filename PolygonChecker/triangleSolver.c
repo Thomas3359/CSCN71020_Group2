@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-#include "triangleSolver.h"
+#include "main.h"
 #include "math.h"
 
 #define PI 3.14159265358979323846
@@ -25,19 +25,26 @@ int* triangleangles(int side1, int side2, int side3)
 
 char* analyzeTriangle(int side1, int side2, int side3) {
 	char* result = "";
+	int tempresult;
 	if (side1 <= 0 || side2 <= 0 || side3 <= 0) {
 		result = "Not a triangle";
+		tempresult = 1;
+
 	}
 	else if (side1 == side2 && side1 == side3) {
 		result = "Equilateral triangle";
+		tempresult = 2;
+
 	}
 	else if ((side1 == side2 && side1 != side3) || (side1 == side3 && side1 != side2))
 	{
 		result = "Isosceles triangle";
+		tempresult = 3;
 	}
 	else {
 		result = "Scalene triangle";
+		tempresult = 4;
 	}
 	triangleangles(side1, side2, side3);
-	return result;
+	return result, tempresult;
 }

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-#include "rectangleSolver.h"
+#include "main.h"
 
 int* analyzeRectanglepoints(int* rectangleSides, int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4) {
 
@@ -16,16 +16,28 @@ int* analyzeRectanglepoints(int* rectangleSides, int x1, int y1, int x2, int y2,
 
 char* analyzeRectangleside(int side1, int side2, int side3, int side4) {
 	char* rectangleresult = "";
+	int tempresult;
 	if (side1 == side3 && side2 == side4 && side1 != side2 && side3 != side4) {
 		rectangleresult = "Rectangle";
 		int area = side1 * side2;
 		printf_s("Area = %d\n", area);
+		tempresult = 1;
+
 	}
 	else if (side1 == side2 && side3 == side4) {
 		rectangleresult = "Square";
+		tempresult = 2;
+
+	}
+	else if (side1 <=0 || side2 <=0 || side3<=0 || side4<=0) {
+		rectangleresult = "Not a real rectangle";
+		tempresult = 3;
+
 	}
 	else {
 		rectangleresult = "Irregular Quadrilateral";
+		tempresult = 4;
+
 	}
 
 	return rectangleresult;

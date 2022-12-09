@@ -16,17 +16,17 @@ namespace REC001
 		TEST_METHOD(TypeOfRectangle)
 		{
 			//This is testing the "Square" portion of the AnalyzeRectangleside Function
-			int Result = 0;
-			Result = analyzeRectangleside(0, 0, 0, 0);
-			Assert::AreEqual(0, Result);
+			int tempresult = 0;
+			tempresult = analyzeRectangleside(-10, 10, 10, 10);
+			Assert::AreEqual(3, tempresult);
 		}
 
 		TEST_METHOD(TypeOfRectangle2)
 		{
 			//This is testing the "Rectangle" portion of the AnalyzeRectangleside Function
 			int Result = 0;
-			Result = analyzeRectangleside(0, 0, 0, 0);
-			Assert::AreEqual(0, Result);
+			Result = analyzeRectangleside(10, 10, 10, 10);
+			Assert::AreEqual(90, Result);
 		}
 
 		TEST_METHOD(TypeOfRectangle3)
