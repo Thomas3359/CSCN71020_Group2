@@ -16,7 +16,6 @@ int main() {
 		{
 		case 1:
 			printf_s("Triangle selected.\n");
-			float gamma, alpha, beta;
 			int triangleSides[3] = { 0, 0, 0 };
 			int* triangleSidesPtr = getTriangleSides(triangleSides);
 			char* result = analyzeTriangle(triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2]);
@@ -29,7 +28,7 @@ int main() {
 			int* rectanglePointsPtr = getRectanglePoints(rectanglePoints);
 			int* rectangleSidesPtr = analyzeRectanglepoints(rectangleSides , rectanglePointsPtr[0], rectanglePointsPtr[1], rectanglePointsPtr[2], rectanglePointsPtr[3], rectanglePointsPtr[4], rectanglePointsPtr[5], rectanglePointsPtr[6], rectanglePointsPtr[7]);
 			char* rectangleresultsides = analyzeRectangleside(rectangleSidesPtr[0], rectangleSidesPtr[1], rectangleSidesPtr[2], rectangleSidesPtr[3]);
-			printf_s("%s\n", rectangleresultsides);
+			printf("%s\n", rectangleresultsides);
 			parameter(rectangleSidesPtr[0], rectangleSidesPtr[1], rectangleSidesPtr[2], rectangleSidesPtr[3]);
 			break;
 		case 0:

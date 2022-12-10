@@ -2,6 +2,7 @@
 #include "CppUnitTest.h"
 
 extern "C" int analyzeRectangleside(int, int, int, int);
+extern "C" int parameter(int, int, int, int);
 extern "C" int main();
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
@@ -64,7 +65,7 @@ namespace REQ002
 		{
 			//this is testing rectangle function using 
 			int tempresult = 0;
-			tempresult = analyzeRectangleside(0, 0, 0, -1);
+			tempresult = analyzeRectangleside(-1, -10, 0, 0);
 			Assert::AreEqual(3, tempresult);
 		}
 
@@ -72,24 +73,23 @@ namespace REQ002
 		{
 			//this is testing rectangle function using 
 			int tempresult = 0;
-			tempresult = analyzeRectangleside(-1, -10, 0, 0);
-			Assert::AreEqual(3, tempresult);
-		}
-
-		TEST_METHOD(RectangleFunction_009)
-		{
-			//this is testing rectangle function using 
-			int tempresult = 0;
 			tempresult = analyzeRectangleside(10, 2, 50, 1000);
 			Assert::AreEqual(4, tempresult);
 		}
 
-		TEST_METHOD(RectangleFunction_010)
+		TEST_METHOD(RectangleParamFunction_001)
 		{
 			//this is testing rectangle function using 
-			int tempresult = 0;
-			tempresult = analyzeRectangleside(350, 50, 1, 10000);
-			Assert::AreEqual(4, tempresult);
+			int parameter1 = 0;
+			parameter1 = parameter(10, 10, 10, 10);
+			Assert::AreEqual(40, parameter1);
+		}
+		TEST_METHOD(RectangleParamFunction_002)
+		{
+			//this is testing rectangle function using 
+			int parameter1 = 0;
+			parameter1 = parameter(70, 10, 10, 10);
+			Assert::AreEqual(100, parameter1);
 		}
 	};
 }

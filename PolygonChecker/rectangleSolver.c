@@ -47,4 +47,5 @@ char* analyzeRectangleside(int side1, int side2, int side3, int side4) {
 void parameter(int side1, int side2, int side3, int side4) {
 	int parameter = side1 + side2 + side3 + side4;
 	printf_s("The parameter is %d", parameter);
+	return parameter;
 }
