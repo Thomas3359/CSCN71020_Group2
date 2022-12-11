@@ -88,8 +88,8 @@ namespace REQ002
 		{
 			//this is testing rectangle function using 
 			int parameter1 = 0;
-			parameter1 = parameter(70, 10, 10, 10);
-			Assert::AreEqual(100, parameter1);
+			parameter1 = parameter(-10, 10, 10, 0);
+			Assert::AreEqual(10, parameter1);
 		}
 	};
 }
