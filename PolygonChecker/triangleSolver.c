@@ -8,19 +8,19 @@
 
 int* triangleangles(int side1, int side2, int side3)
 {
-	int alpha = 0;
-	int beta = 0;
-	int gamma = 0;
-	int getalpha(side1, side2, side3, alpha);
-	int getbeta(side1, side2, side3, beta);
-	int getgamma(side1, side2, side3, gamma);
+	float alpha = acos((side2 + side3 - side1) / (2 * sqrt(side2) * sqrt(side3)));
+	alpha = alpha * 180 / PI;
+	float beta = acos((side1 + side3 - side2) / (2 * sqrt(side1) * sqrt(side3)));
+	beta = beta * 180 / PI;
+	float gamma = acos((side1 + side2 - side3) / (2 * sqrt(side1) * sqrt(side2)));
+	gamma = gamma * 180 / PI;
 	
 	int total = alpha + beta + gamma;
 	if (total == 180)
 	{
-		printf("angle 1 = %d \nangle 2 = %d \nangle 3 = %d\n", alpha, beta, gamma);
+		printf("angle 1 = %lf \nangle 2 = %lf \nangle 3 = %lf\n", alpha, beta, gamma);
 	}
-	return alpha, beta, gamma;
+	return total;
 }
 
 char* analyzeTriangle(int side1, int side2, int side3) {
@@ -49,19 +49,4 @@ char* analyzeTriangle(int side1, int side2, int side3) {
 	return result, tempresult;
 }
 
-int getalpha(int side1, int side2, int side3, int alpha) {
-	alpha = acos((side2 + side3 - side1) / (2 * sqrt(side2) * sqrt(side3)));
-	alpha = alpha * 180 / PI;
-	return alpha;
-}
-int getbeta(int side1, int side2, int side3, int beta) {
-	beta = acos((side1 + side3 - side2) / (2 * sqrt(side1) * sqrt(side3)));
-	beta = beta * 180 / PI;
-	return beta;
-}
-int getgamma(int side1, int side2, int side3, int gamma) {
-	gamma = acos((side1 + side2 - side3) / (2 * sqrt(side1) * sqrt(side2)));
-	gamma = gamma * 180 / PI;
-	return gamma;
-}
 

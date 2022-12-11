@@ -14,9 +14,3 @@ void parameter(int side1, int side2, int side3, int side4);
 char* analyzeTriangle(int side1, int side2, int side3);
 
 int* triangleangles(int side1, int side2, int side3);
-
-int getalpha(int side1, int side2, int side3, int alpha);
-
-int getbeta(int side1, int side2, int side3, int beta);
-
-int getgamma(int side1, int side2, int side3, int gamma);
